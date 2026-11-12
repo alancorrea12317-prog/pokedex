@@ -99,7 +99,7 @@ function App() {
 
         <main className="pokedex">
 
-          <h2>Minha Pokedex - Deploy automatico</h2>
+          <h2>Minha Pokedex - Deploy automatico 2</h2>
 
           <Poke
             pokemon={pokemon}
