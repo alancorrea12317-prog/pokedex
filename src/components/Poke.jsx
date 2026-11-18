@@ -1,10 +1,50 @@
-function Poke({ pokemon,nome, setNome, buscarPokemon, carregando, erro }) {
+import axios from 'axios'
+import { useState } from 'react'
 
+function Poke() {
+
+  const [nome, setNome] = useState('')
+  const [pokemon, setPokemon] = useState(null)
+  const [erro, setErro] = useState('')
+  const [carregando, setCarregando] = useState(false)
+
+  async function buscarPokemon() {
+
+    if (!nome.trim()) {
+      setErro('Informe o nome de um Pokemon!')
+      return
+    }
+
+    try {
+
+      setCarregando(true)
+      setErro('')
+      setPokemon(null)
+
+      const resposta = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/${nome.toLowerCase().trim()}`
+      )
+
+      setPokemon(resposta.data)
+
+   } catch (error) {
+
+      setErro('Pokemon não encontrado!')
+
+    } finally {
+
+      setCarregando(false)
+
+    }
+  }
 
 
   return (
-   
 
+      <main className="pokedex">
+
+      <h2>Minha Pokédex - Deploy automatico </h2>
+   
       <div className="pesquisa">
 
         <input
@@ -18,7 +58,7 @@ function Poke({ pokemon,nome, setNome, buscarPokemon, carregando, erro }) {
           Buscar
         </button>
 
-
+ </div>
       
 
       {carregando && <p>Buscando Pokemon...</p>}
@@ -58,7 +98,8 @@ function Poke({ pokemon,nome, setNome, buscarPokemon, carregando, erro }) {
     
       )}
       
-      </div>
+      
+    </main>
     );
 }
         

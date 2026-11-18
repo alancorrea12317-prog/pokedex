@@ -11,9 +11,9 @@ body {
 }
 
 .pokedex {
-  width: 180%;
-  max-width: 500px;
-  margin: 60px auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   padding: 30px;
   background: #34495e;
   border-radius: 15px;
@@ -54,6 +54,7 @@ button:hover {
 }
 
 .pokemon-card {
+  width: 100%;
   margin-top: 25px;
   padding: 20px;
   background: #ecf0f1;
@@ -63,7 +64,8 @@ button:hover {
 
 .pokemon-card img {
   width: 300px;
-  max-width: 120%;
+  max-width: 100%;
+  height: auto;
 }
 
 .pokemon-card p {
@@ -80,6 +82,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  margin: 25px 0;
 }
 
 .pokedex .pokemon-card {
@@ -88,4 +91,26 @@ button:hover {
   align-items: center;
   gap: 20px;
   padding: 20px;
+}
+.lado {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+.imdb-section {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+.pokedex .pesquisa input {
+  width: 100%;
+  max-width: 300px;
+}
+
+.pokedex .pesquisa button {
+  width: 150px;
 }

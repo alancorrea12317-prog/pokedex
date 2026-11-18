@@ -1,4 +1,21 @@
-function Imdb({ filmeIMDB }) {
+import axios from 'axios'
+import { useState } from 'react'
+import { useEffect } from 'react'
+
+
+function Imdb() {
+
+   const [filmeIMDB, setFilmeIMDB] = useState({})
+
+    async function buscarFilmeIMDB() {
+    const filme =  await axios.get(`https://www.omdbapi.com/?i=tt3896198&apikey=90f99163`)
+    const cinemaIMDB = filme.data
+    setFilmeIMDB(cinemaIMDB)
+  }
+
+   useEffect(() => {
+    buscarFilmeIMDB()
+  },[])
 
     
   return (
@@ -14,6 +31,7 @@ function Imdb({ filmeIMDB }) {
         <p>Diretor: {filmeIMDB.Director}</p>
       </div>
     </div>
+
   );
 }
 
