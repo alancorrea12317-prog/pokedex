@@ -1,6 +1,6 @@
 function Home() {
   return (
-    <h1>Bem-vindo à minha aplicação!</h1>
+    <h1>Programação de aplicativos</h1>
   )
 }
 

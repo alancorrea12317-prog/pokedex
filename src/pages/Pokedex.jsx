@@ -1,12 +1,11 @@
 import Poke from '../components/Poke'
 
-function Pokedex() {
+function Pokemon() {
   return (
-    <>
-      <h1>Minha Pokédex</h1>
+    <main className="pokedex">
       <Poke />
-    </>
+    </main>
   )
 }
 
-export default Pokedex
+export default Pokemon
